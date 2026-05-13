@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Book1
+  - Book2
+  - Book3
   layers:
   - Default
   - TransparentFX
