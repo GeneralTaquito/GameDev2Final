@@ -32,6 +32,13 @@ public class Entry_Manager : MonoBehaviour
     public Renderer DoorRenderer;
     public GameObject Door;
 
+    void Start()
+    {
+        Room1.SetActive(false);
+        Room2.SetActive(false);
+        Room3.SetActive(false);
+    }
+
     void Update()
     {
         switch (roomVal)
@@ -44,16 +51,19 @@ public class Entry_Manager : MonoBehaviour
 
             case Rooms.Room1:
                 StartCoroutine(OpenDoor());
+                Room1.SetActive(true);
                 Debug.Log("room1state / Open Door");
                 break;
 
             case Rooms.Room2:
                 StartCoroutine(OpenDoor());
+                Room2.SetActive(true);
                 Debug.Log("room2state / Open Door");
                 break;
 
             case Rooms.Room3:
                 StartCoroutine(OpenDoor());
+                Room3.SetActive(true);
                 Debug.Log("room3state / Open Door");
                 break;
             case Rooms.Idle:
@@ -141,6 +151,9 @@ public class Entry_Manager : MonoBehaviour
         if (color.a >= 1)
         {
             roomVal = Rooms.Idle;
+            Room1.SetActive(false);
+            Room2.SetActive(false);
+            Room3.SetActive(false);
         }
     }
 }
