@@ -32,6 +32,11 @@ public class Entry_Manager : MonoBehaviour
     public Renderer DoorRenderer;
     public GameObject Door;
 
+    [Header("MiscPolish")]
+    public ParticleSystem PS1;
+    public AudioSource AS1;
+    public AudioSource AS2;
+
     void Start()
     {
         Room1.SetActive(false);
@@ -47,6 +52,8 @@ public class Entry_Manager : MonoBehaviour
                 Door.SetActive(true);
                 StartCoroutine(CloseDoor());
                 Debug.Log("Nothing / DOOR CLOSED");
+                AS1.UnPause();
+                AS2.Pause();
                 break;
 
             case Rooms.Room1:
@@ -58,6 +65,8 @@ public class Entry_Manager : MonoBehaviour
             case Rooms.Room2:
                 StartCoroutine(OpenDoor());
                 Room2.SetActive(true);
+                AS1.Pause();
+                AS2.Play();
                 Debug.Log("room2state / Open Door");
                 break;
 
@@ -79,6 +88,7 @@ public class Entry_Manager : MonoBehaviour
             Book1.transform.position = transform.position;
             Book1.transform.rotation = transform.rotation; 
             Book1RB.constraints = RigidbodyConstraints.FreezeAll;
+            PS1.Play();
             
             roomVal = Rooms.Room1;
             Debug.Log("Book is placed (1)");
@@ -88,6 +98,7 @@ public class Entry_Manager : MonoBehaviour
             Book2.transform.position = transform.position;
             Book2.transform.rotation = transform.rotation;
             Book2RB.constraints = RigidbodyConstraints.FreezeAll;
+            PS1.Play();
 
             roomVal = Rooms.Room2;
             Debug.Log("Book is placed (2)");
@@ -97,6 +108,7 @@ public class Entry_Manager : MonoBehaviour
             Book3.transform.position = transform.position;
             Book3.transform.rotation = transform.rotation;
             Book3RB.constraints = RigidbodyConstraints.FreezeAll;
+            PS1.Play();
 
             roomVal = Rooms.Room3;
             Debug.Log("Book is placed (3)");
@@ -108,6 +120,7 @@ public class Entry_Manager : MonoBehaviour
         {
             Book1RB.constraints = RigidbodyConstraints.None;
             roomVal = Rooms.None;
+            AS1.UnPause();
             Debug.Log("Book is removed (1)");
         }
         if (other.CompareTag("Book2"))

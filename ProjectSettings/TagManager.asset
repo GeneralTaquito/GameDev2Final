@@ -7,6 +7,9 @@ TagManager:
   - Book1
   - Book2
   - Book3
+  - Trophy1
+  - Trophy2
+  - Trophy3
   layers:
   - Default
   - TransparentFX

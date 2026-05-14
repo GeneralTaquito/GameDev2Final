@@ -4,14 +4,14 @@ using System.Collections;
 
 public class NPC_Script : MonoBehaviour
 {
-    public TextMeshProUGUI Text;
+    public TextMeshProUGUI Text1;
     public string[] lines;
     public float textspeed;
     private int index;
 
     void Start()
     {
-        Text.text = string.Empty;
+        Text1.text = string.Empty;
         DialogueStart();
 
     }
@@ -20,14 +20,14 @@ public class NPC_Script : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Text.text == lines[index])
+            if (Text1.text == lines[index])
             {
                 NextDialogue();
             }
             else
             {
                 StopAllCoroutines();
-                Text.text = lines[index];
+                Text1.text = lines[index];
             }
         }
     }
@@ -41,7 +41,7 @@ public class NPC_Script : MonoBehaviour
     {
         foreach (char c in lines[index].ToCharArray())
         {
-            Text.text += c;
+            Text1.text += c;
             yield return new WaitForSeconds(textspeed);
         }
     }
@@ -51,7 +51,7 @@ public class NPC_Script : MonoBehaviour
         if (index < lines.Length - 1)
         {
             index++;
-            Text.text = string.Empty;
+            Text1.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else

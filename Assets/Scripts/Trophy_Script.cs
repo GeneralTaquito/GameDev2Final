@@ -12,6 +12,9 @@ public class Trophy_Script : MonoBehaviour
 
     Vector3 objectpos;
 
+    public AudioSource AS1;
+    public bool Tick = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,6 +30,11 @@ public class Trophy_Script : MonoBehaviour
             {
                 instance.gameObject.SetActive(true);
                 instance.Looking = true;
+            }
+            if (Tick == false)
+            {
+                AS1.Pause();
+                Tick = true;
             }
             Hold();
         }

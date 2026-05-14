@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 56154552}
   - component: {fileID: 56154554}
   - component: {fileID: 56154553}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 469792165}
   - component: {fileID: 469792164}
   - component: {fileID: 469792163}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 1105284917}
   - component: {fileID: 1105284919}
   - component: {fileID: 1105284918}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 1177005103}
   - component: {fileID: 1177005102}
   - component: {fileID: 1177005101}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1177005104
 RectTransform:
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 2019906365}
   - component: {fileID: 2019906367}
   - component: {fileID: 2019906366}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 2032296133}
   - component: {fileID: 2032296135}
   - component: {fileID: 2032296134}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Start text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,9 +1051,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4427486919347313241, guid: f933a3fa8c42295449d49ff1615a2760, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5079178476426880018, guid: f933a3fa8c42295449d49ff1615a2760, type: 3}
       propertyPath: m_Name
       value: Transitions
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079178476426880018, guid: f933a3fa8c42295449d49ff1615a2760, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5832491046170318764, guid: f933a3fa8c42295449d49ff1615a2760, type: 3}
       propertyPath: m_LocalPosition.x
